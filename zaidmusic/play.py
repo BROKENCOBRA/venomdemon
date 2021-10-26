@@ -143,10 +143,8 @@ def updated_stats(chat, queue, vol=100):
     if chat.id in callsmusic.pytgcalls.active_calls:
         stats = "⚙ settings for **{}**".format(chat.title)
         if len(que) > 0:
-            stats += "\n\n"
-            stats += "🎚 ᴠᴏʟᴜᴍᴇ: {}%\n".format(vol)
-            stats += "🎵 ꜱᴏɴɢ ᴘʟᴀʏᴇᴅ: `{}`\n".format(len(que))
-            stats += "💡 ɴᴏᴡ ᴘʟᴀʏɪɴɢ: **{}**\n".format(queue[0][0])
+            stats += "\n\n
+            stats += "🎵 ꜱᴏɴɢ ᴘʟᴀʏᴇᴅ: `{}`\n".format(len(que)
             stats += "🎧  ᴜꜱᴇʀ ʙʏ: {}".format(queue[0][1].mention)
     else:
         stats = None
@@ -167,9 +165,9 @@ def r_ply(type_):
                 InlineKeyboardButton("⏭", "skip"),
             ],
             [
-                InlineKeyboardButton("📖 Pʅαყʅιʂƚ", "playlist"),
+                InlineKeyboardButton("❣️Oᴡɴᴇʀ", url=f"https://t.me/shivamdemon"),
+                InlineKeyboardButton("✌️Bʜᴀɪ",url=f"https://t.me/alone_boy_xd_01"),
             ],
-            [InlineKeyboardButton("🗑 ᴄʟᴏꜱᴇ", "cls")],
         ]
     )
     return mar
@@ -262,7 +260,6 @@ async def p_cb(b, cb):
         by = temp[0][1].mention(style="md")
         msg = "☑️ **ɴᴏᴡ ᴘʟᴀʏɪɴɢ** on {}".format(cb.message.chat.title)
         msg += "\n\n• " + now_playing
-        msg += "\n• Req by " + by
         temp.pop(0)
         if temp:
             msg += "\n\n"
@@ -385,9 +382,9 @@ async def m_cb(b, cb):
                     InlineKeyboardButton("⏭", "skip"),
                 ],
                 [
-                    InlineKeyboardButton("📖 ρʅαყʅιʂƚ", "playlist"),
+                    InlineKeyboardButton("❣️Oᴡɴᴇʀ", url=f"https://t.me/shivamdemon"),
+                    InlineKeyboardButton("✌️Bʜᴀɪ",url=f"https://t.me/alone_boy_xd_01"),
                 ],
-                [InlineKeyboardButton("🗑 ᴄʟᴏꜱᴇ", "cls")],
             ]
         )
         await cb.message.edit(stats, reply_markup=marr)
@@ -497,7 +494,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🔄 **cσnnєctíng tσ vεησм sεяvεя...**")
+    await lel.edit("🔄 **𝐂𝐨𝐧𝐧𝐞𝐜𝐭𝐢𝐧𝐠 𝐓𝐨 𝐃𝐞𝐦𝐨𝐧 𝐒𝐞𝐫𝐯𝐞𝐫...**")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -540,9 +537,9 @@ async def ytplay(_, message: Message):
             ],
             [
                 InlineKeyboardButton(
-                    "☑️ ᴄʜᴀɴɴᴇʟ", url=f"https://t.me/V3N0M_0P"
+                    "❣️Oᴡɴᴇʀ", url=f"https://t.me/shivamdemon"
                 ),
-                InlineKeyboardButton("ꜱᴜᴘᴘᴏʀᴛ ⚡", url=f"https://t.me/V3NOM_SUPPORT"),
+                InlineKeyboardButton("⚡Bʜᴀɪ", url=f"https://t.me/alone_boy_xd_01"),
             ],
         ]
     )
@@ -560,7 +557,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption=f"☑️ **ꜱᴏɴɢ ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ »** `{position}`\n\n🏷 **ɴᴀᴍᴇ:** [{title[:80]}]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n🎧 **ᴜꜱᴇʀ ʙʏ:** {message.from_user.mention}",
+            caption=f"☑️ **ꜱᴏɴɢ ᴀᴅᴅᴇᴅ ᴛᴏ Qᴜᴇᴜᴇ »** `{position}`\n\n🏷 **ɴᴀᴍᴇ:** [{title[:80]}]({url})\n🎧 **Dᴇᴍᴏɴ ʙᴏᴛ Nᴏᴡ ᴘʟᴀʏɪɴɢ Iɴ:** {message.chat.title}",
             reply_markup=keyboard,
         )
     else:
@@ -581,8 +578,8 @@ async def ytplay(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption=f"☑️ **ɴᴀᴍᴇ:** [{title[:80]}]({url})\n⏱ **ᴅᴜʀᴀᴛɪᴏɴ:** `{duration}`\n💡 **ꜱᴛᴀᴛᴜꜱ:** `ᴘʟᴀʏɪɴɢ`\n"
-            + f"🎧 **ᴜꜱᴇʀ ʙʏ:** {message.from_user.mention}",
+            caption=f"☑️ **ɴᴀᴍᴇ:** [{title[:80]}]({url})\n"
+            + f"🎵 **Dᴇᴍᴏɴ ʙᴏᴛ Nᴏᴡ ᴘʟᴀʏɪɴɢ Iɴ:** {message.chat.title}",
             reply_markup=keyboard,
         )
         os.remove("final.png")
