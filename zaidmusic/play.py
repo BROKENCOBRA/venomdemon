@@ -128,7 +128,7 @@ async def playlist(client, message):
     msg += "\n• Req By " + by
     temp.pop(0)
     if temp:
-        msg += "\n"
+        msg += "\n\n"
         msg += "**Queued Song**"
         for song in temp:
             name = song[0]
@@ -143,7 +143,7 @@ def updated_stats(chat, queue, vol=100):
     if chat.id in callsmusic.pytgcalls.active_calls:
         stats = "⚙ settings for **{}**".format(chat.title)
         if len(que) > 0:
-            stats += "\n\n
+            stats += "\n\n"
             stats += "🎵 ꜱᴏɴɢ ᴘʟᴀʏᴇᴅ: `{}`\n".format(len(que)
             stats += "🎧  ᴜꜱᴇʀ ʙʏ: {}".format(queue[0][1].mention)
     else:
