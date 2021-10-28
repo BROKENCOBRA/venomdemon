@@ -144,7 +144,7 @@ def updated_stats(chat, queue, vol=100):
         stats = "⚙ settings for **{}**".format(chat.title)
         if len(que) > 0:
             stats += "\n"
-            stats += "🎵 ꜱᴏɴɢ ᴘʟᴀʏᴇᴅ: `{}`\n".format(len(que)
+            stats += "🎵 ꜱᴏɴɢ ᴘʟᴀʏᴇᴅ: `{}`\n".format(len(que))
             stats += "💡 ɴᴏᴡ ᴘʟᴀʏɪɴɢ: **{}**\n".format(queue[0][0])
     else:
         stats = None
