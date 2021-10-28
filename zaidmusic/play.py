@@ -143,7 +143,7 @@ def updated_stats(chat, queue, vol=100):
     if chat.id in callsmusic.pytgcalls.active_calls:
         stats = "⚙ settings for **{}**".format(chat.title)
         if len(que) > 0:
-            stats += "\n\n"
+            stats += "\n"
             stats += "🎵 ꜱᴏɴɢ ᴘʟᴀʏᴇᴅ: `{}`\n".format(len(que)
             stats += "💡 ɴᴏᴡ ᴘʟᴀʏɪɴɢ: **{}**\n".format(queue[0][0])
     else:
